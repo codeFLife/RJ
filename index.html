@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>汭嘉~~~</title>
+  <title>For my sweetheart 汭嘉:)</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="animate.css">
   <style>
@@ -20,31 +20,35 @@
 
     .banner {
       width: 100%;
-      height: 600px;
+      height: 700px;
       background: url('./imgs/ggg.jpg');
       background-size: 100% 100%;
     }
 
     #showStr {
-      /* color: #F80034; */
-      width: 600px;
+      color: #2D4044;
+      width: 100%;
+      text-align: center;
       height: 100px;
       margin: 0 auto;
-      margin-top: 60px;
+      margin-top: 30px;
       font-size: 50px;
+      font-weight: 700;
     }
   </style>
 </head>
 
 <body>
   <div style="display:none" id="string">
-    Let me be ur Gatsby❤️
+    Let me be ur Gatsby❤️</br>
+    stay with U till the end of the world
   </div>
 
   <div class="banner"></div>
   <div id="showStr">
 
   </div>
+  
 
   <script>
     var index = 0;
@@ -54,7 +58,7 @@
       document.getElementById("showStr").innerHTML = str.substring(0, index++);
     }
     setTimeout(function () {
-      setInterval(type, 200); 
+      setInterval(type, 200);
       setInterval(function () {
         document.getElementById("showStr").classList.add('animated', 'bounceIn')
       }, 6000)
