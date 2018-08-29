@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>汭嘉~~~</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="animate.css">
   <style>
     * {
       margin: 0;
@@ -25,30 +26,26 @@
     }
 
     #showStr {
-      color: #F80034;
-      width: 500px;
+      /* color: #F80034; */
+      width: 600px;
       height: 100px;
       margin: 0 auto;
-      margin-top: 30px;
+      margin-top: 60px;
       font-size: 50px;
     }
   </style>
 </head>
 
 <body>
-
-
-  
   <div style="display:none" id="string">
-    Let me be ur Gatsby
+    Let me be ur Gatsby❤️
   </div>
-
-
 
   <div class="banner"></div>
   <div id="showStr">
 
   </div>
+
   <script>
     var index = 0;
     var str = document.getElementById("string").innerHTML;
@@ -57,20 +54,10 @@
       document.getElementById("showStr").innerHTML = str.substring(0, index++);
     }
     setInterval(type, 200); //通过定时器来让文字逐步显示
+    setInterval(function () {
+      document.getElementById("showStr").classList.add('animated','bounceIn')
+    },6000)
 
-
-
-    // var content = document.querySelector('.content');
-    // let arr = ['L', 'e', 't', ' ', 'm', 'e', ' ', 'u', 'r', ' ', 'G', 'a', 't', 's', 'b', 'y'];
-    // for (var i = 0; i < arr.length; i++) {
-    //   console.log(arr[i]);
-    //   (function () {
-
-    //   })()
-    //   setTimeout(function () {
-    //     content.innerHTML += arr[i];
-    //   }, 1000)
-    // }
   </script>
 </body>
 
