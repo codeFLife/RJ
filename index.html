@@ -53,11 +53,12 @@
     function type() {
       document.getElementById("showStr").innerHTML = str.substring(0, index++);
     }
-    setInterval(type, 200); //通过定时器来让文字逐步显示
-    setInterval(function () {
-      document.getElementById("showStr").classList.add('animated','bounceIn')
-    },6000)
-
+    setTimeout(function () {
+      setInterval(type, 200); 
+      setInterval(function () {
+        document.getElementById("showStr").classList.add('animated', 'bounceIn')
+      }, 6000)
+    }, 1000)
   </script>
 </body>
 
