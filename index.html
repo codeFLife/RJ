@@ -34,8 +34,7 @@
 <body>
   <h1 id="h1"></h1>
   <canvas></canvas>
-  <audio autoplay="autoplay" src="./Blur-Tender.mp3">
-  </audio>
+  <audio id="audio" autoplay="autoplay" src="./The Rose.mp3"></audio>
   <!--canvas 画布-->
 
   <script>
@@ -43,6 +42,14 @@
       ctx = canvas.getContext("2d");
 
     var ww, wh;
+    
+    var audio = document.getElementById('audio');
+    document.documentElement.onmousemove = function () {
+      audio.play();
+    }
+    document.documentElement.ontouchstart = function () {
+      audio.play();
+    }
 
     function onResize() {
       ww = canvas.width = window.innerWidth;
