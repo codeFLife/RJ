@@ -58,13 +58,14 @@
     document.documentElement.onmousemove = function () {
       audio.play();
     }
-    document.documentElement.ontouchstart = function () {
-      audio.play();
-    }
-    document.addEventListener('touchstart', stop, false)
-    document.addEventListener('touchmove', stop, false)
-    document.addEventListener('touchend', stop, false)
+    // document.documentElement.ontouchstart = function () {
+    //   audio.play();
+    // }
+    document.documentElement.addEventListener('touchstart', stop, false)
+    document.documentElement.addEventListener('touchmove', stop, false)
+    document.documentElement.addEventListener('touchend', stop, false)
     function stop(e) {
+      audio.play();
       e.preventDefault();
     }
     // var startX = 0,
