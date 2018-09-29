@@ -65,9 +65,9 @@
     // document.documentElement.ontouchstart = function () {
     //   audio.play();
     // }
-    // document.addEventListener('touchstart', stop, false)
-    // document.addEventListener('touchmove', stop, false)
-    // document.addEventListener('touchend', stop, false)
+    document.body.addEventListener('touchstart', stop, false)
+    document.body.addEventListener('touchmove', stop, false)
+    document.body.addEventListener('touchend', stop, false)
 
     function stop(e) {
       audio.play();
@@ -233,7 +233,7 @@
       var minute = parseInt(time % 3600 / 60); // 分 -(day*24)  以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
       var second = parseInt(time % 60); // 以60秒为一整份 取余 剩下秒数
       obj.innerHTML = "kittyCat<br>我们在一起已经：<br>" + day + "天" + hour + "小时" + minute + "分" + second + "秒" +
-        "了<br><span>认识你以后，我发现<br>原来，一个人吃饭没有两个人吃饭开心<br>我喜欢你得意的时候摇头的样子<br>我喜欢你看着我笑鼻子上的皱纹<br>我喜欢你靠着我闻我身上的味道<br>除了喜欢你，我好像什么都做不好<br>你在我眼中总是完美的，我喜欢你的一切<br>现在你是我的女孩，相信我，我们会很幸福<br>看看中间的计时器，将幸福继续下去，直至数据yi出.</span>"
+        "了<br><span>认识你以后，我发现<br>原来，一个人吃饭没有两个人吃饭开心<br>我喜欢你得意的时候摇头的样子<br>我喜欢你看着我笑鼻子上的皱纹<br>我喜欢你靠着我闻我身上的味道<br>除了喜欢你，我好像什么都做不好<br>你在我眼中总是完美的，我喜欢你的一切<br>现在你是我的女孩，相信我，我们会很幸福<br>看看中间的计时器，将幸福继续下去，直至数据出.</span>"
 
       return true;
     }
