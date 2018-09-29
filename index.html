@@ -57,13 +57,13 @@
     document.documentElement.onmousemove = function () {
       audio.play();
     }
-    document.documentElement.ontouchstart = function () {
-      audio.play();
-    }
+    // document.documentElement.ontouchstart = function () {
+    //   audio.play();
+    // }
 
-    // document.body.ontouchmove = function (e) {
-    //   e.preventDefault();
-    // };
+    document.body.ontouchmove = function (e) {
+      e.preventDefault();
+    };
 
     var startX = 0,
       startY = 0;
@@ -85,7 +85,7 @@
       }
     }
     document.addEventListener('touchstart', touchSatrtFunc, false);
-    var _ss = document.querySelector('.wrapper');
+    var _ss = document.documentElement;
     _ss.ontouchmove = function (ev) {
       var _point = ev.touches[0],
         _top = _ss.scrollTop;
