@@ -10,12 +10,15 @@
   <title>For my kittyCat :)</title>
   <link href="favicon.ico" rel="shortcut icon" />
   <style>
-    html, body {
+    html,
+    body {
       overflow: hidden;
       margin: 0;
-      /* position: fixed;
-      top: 0;
-      left: 0; */
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 100%;
     }
 
     /* .wrapper {
@@ -65,6 +68,7 @@
     document.addEventListener('touchstart', stop, false)
     document.addEventListener('touchmove', stop, false)
     document.addEventListener('touchend', stop, false)
+
     function stop(e) {
       audio.play();
       e.preventDefault();
