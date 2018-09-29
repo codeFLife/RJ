@@ -85,7 +85,7 @@
       }
     }
     document.addEventListener('touchstart', touchSatrtFunc, false);
-    var _ss = document.documentElement;
+    var _ss = document.body;
     _ss.ontouchmove = function (ev) {
       var _point = ev.touches[0],
         _top = _ss.scrollTop;
