@@ -51,7 +51,7 @@
   <div class="wrapper">
     <h1 id="h1"></h1>
     <canvas></canvas>
-    <audio id="audio" autoplay="autoplay" src="./杨千嬅-小城大事.mp3"></audio>
+    <audio id="audio" autoplay="autoplay" src="./春夏秋冬.mp3"></audio>
   </div>
   <script>
     var canvas = document.querySelector("canvas"),
@@ -64,44 +64,6 @@
     document.documentElement.onmousemove = function () {
       audio.play();
     }
-    // document.documentElement.ontouchstart = function () {
-    //   audio.play();
-    // }
-    // document.body.addEventListener('touchstart', stop, false)
-    // document.body.addEventListener('touchmove', function (e) {
-    //   e.preventDefault()
-    // }, false)
-    // document.body.addEventListener('touchend', stop, false)
-
-    // function stop(e) {
-    //   audio.play();
-    //   e.preventDefault();
-    // }
-
-    // var overscroll = function (el) {
-    //   el.addEventListener('touchstart', function () {
-    //     var top = el.scrollTop,
-    //       totalScroll = el.scrollHeight,
-    //       currentScroll = top + el.offsetHeight;
-    //     if (top === 0) {
-    //       el.scrollTop = 1;
-    //     } else if (currentScroll === totalScroll) {
-    //       el.scrollTop = top - 1;
-    //     }
-    //   });
-    //   el.addEventListener('touchmove', function (evt) {
-    //     //that scrolling can occur
-    //     if (el.offsetHeight < el.scrollHeight)
-    //       evt._isScroller = true;
-    //   });
-    // }
-    // overscroll(document.querySelector('.wrapper'));
-    // document.body.addEventListener('touchmove', function (evt) {
-    //   if (!evt._isScroller) {
-    //     evt.preventDefault();
-    //   }
-
-    // });
 
     // 首先禁止body
     document.body.ontouchmove = function (e) {
@@ -121,6 +83,7 @@
         //记录触点初始位置
         startX = x;
         startY = y;
+        audio.play();
 
       } catch (e) {
         alert('touchSatrtFunc：' + e.message);
@@ -131,6 +94,7 @@
     // 然后对允许滚动的条件进行判断，这里讲滚动的元素指向body
     var _ss = document.body;
     _ss.ontouchmove = function (ev) {
+      audio.play();
       var _point = ev.touches[0],
         _top = _ss.scrollTop;
       // 什么时候到底部
@@ -148,13 +112,13 @@
       } else if (_top === _bottomFaVal) {
         // 到达底部 如果想禁止页面滚动和上拉加载，讲这段注释放开，也就是在滚动到页面底部的制售阻止默认事件
         // 阻止向上滑动
-        // if (_point.clientY < startY) {
-        //     ev.preventDefault();
-        // } else {
-        //     // 阻止冒泡
-        //     // 正常执行
-        //     ev.stopPropagation();
-        // }
+        if (_point.clientY < startY) {
+          ev.preventDefault();
+        } else {
+          // 阻止冒泡
+          // 正常执行
+          ev.stopPropagation();
+        }
       } else if (_top > 0 && _top < _bottomFaVal) {
         ev.stopPropagation();
       } else {
